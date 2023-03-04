@@ -1,6 +1,7 @@
 package com.ngemba.loginandregistration.registration;
 
 import org.springframework.web.bind.annotation.*;
+
 import lombok.AllArgsConstructor;
 
 @RestController
@@ -8,10 +9,10 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class RegistrationController{
 	
-	private RegistrationService registrationService;
+	private final RegistrationService registrationService;
 	
 	 @PostMapping
-	public String registration(@RequestBody RegistrationRequest request) {
+	public String register(@RequestBody RegistrationRequest request) {
 		return registrationService.register(request);
 	}
 	

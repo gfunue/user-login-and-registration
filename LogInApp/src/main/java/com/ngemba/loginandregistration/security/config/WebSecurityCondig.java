@@ -13,12 +13,13 @@ import com.ngemba.loginandregistration.applicationUser.AppUserService;
 
 import lombok.AllArgsConstructor;
 
+@SuppressWarnings("deprecation")
 @Configuration
 @AllArgsConstructor
 @EnableWebSecurity
 public class WebSecurityCondig extends WebSecurityConfigurerAdapter{
 	
-	private final AppUserService appUserService = new AppUserService();
+	private final AppUserService appUserService;
 	private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
